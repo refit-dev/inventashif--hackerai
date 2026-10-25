@@ -343,7 +343,7 @@ export const createTeamPurchaseSession = action({
       const session = await stripe.checkout.sessions.create({
         customer: stripeCustomerId,
         mode: "payment",
-        payment_method_types: ["card"],
+        allowed_payment_method_types: ["card"],
         line_items: [
           {
             price_data: {
